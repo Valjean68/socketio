@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body{
+			background: url('/ba649fbc4fffb562dddbbcf22f4a4db2.17.jpg');background-repeat: no-repeat;background-size: cover 
+		}
+	</style>
+	<meta charset="utf-8">
+	<title>Bonjour</title>
+</head>
+<body>
+	<center>
+
+		<% if(elemento){ %>
+
+		<h1>Editar</h1>
+		<br><br><br>
+	<form action="/update" method="POST">
+		<input id="id" name="id" value="<%= elemento.id %>" hidden>
+		<h2>Item:</h2>
+		<input type="text" id="item" name="item" value="<%= elemento.item %>">
+		<br><br>
+		<h2>Cantidad:</h2>
+		<input type="text" id="user" name="user" value="<%= elemento.elemento %>">
+		<br><br>
+		
+		
+		<input type="submit" value="Guardar">
+		<a href="/">Cancelar</a>
+	</form>
+
+	<% } %>
+
+</center>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		html{overflow-y: hidden;}
+		body{background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.9)),url('paris.jpg');background-repeat: no-repeat;background-size: cover ;color: powderblue;font-family: sans-serif;font-size: 20px;height: 100vh;overflow-y: auto;}
+	</style>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<meta charset="utf-8">
+	<title>Bonjour ☕</title>
+</head>
+<body>
+
+	
+	<center>
+	<h4>✨Étoile Workshop✨</h4>
+	<h1>Bonjour ☕</h1>
+
+	<div style="width: 80vw;">
+		<h3 style="text-align: left;">Bienvenido <%= id %><a href="/logout" style="float: right;text-decoration: none;cursor: pointer;color: orange;font-size: 12px;">Salir</a></h3>
+		<br>
+
+		<div>
+			<div style="color: lightskyblue;height: 50vh;overflow-x: hidden;overflow-y: auto;width: 70%;text-align: left;float: left;background: rgba(255, 255, 255, 0.04)" id="output">
+				
+			</div>
+
+			<div style="color: lightskyblue;height: 50vh;overflow-x: hidden;overflow-y: auto;width: 25%;text-align: left;float: right;background: rgba(255, 255, 255, 0.04)" id="userlist">
+				
+			</div>
+
+		
+				
+			</div>
+			
+		</div>
+		<input type="text" id="user" value="<%= id %>" hidden>
+		<input style="background: linear-gradient(transparent,darkblue) ;color: lightskyblue;border: none;outline: none;border-bottom: solid lightskyblue;width: 80%;" type="text" id="usuario" value="<%= id %>" hidden><br><br>
+		<input style="caret-color: powderblue;overflow-y: auto;width: 60vw;height: 5vh;outline: none;border: none; background: linear-gradient(transparent,rgba(0, 60, 145, 0.4));color: powderblue;font-size:20px;border-bottom: 3px solid powderblue;" type="text" id="mensaje" placeholder="Mensaje">
+		<button style="width: 20vw;height: 15vh;outline: none;border: none;font-size: 75px;background: transparent;color: powderblue;cursor: pointer;" id="btn">➲</button>
+	</div>
+
+	<script src="/socket.io/socket.io.js"></script>
+
+	<script src="chat.js"></script>
+</center>
+
+</body>
+</html>

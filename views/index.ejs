@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <style type="text/css">
+    html{overflow-y: hidden;}
+    a{text-decoration: none;color: #b89f16;}
+    body{background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.9)),url('map.jpg');background-repeat: no-repeat;background-size: cover ;color: powderblue;font-family: sans-serif;font-size: 18px;height: 100vh;overflow-y: auto;}
+
+
+
+
+    #bar {
+  
+  animation: mymove 2s;
+  transition-timing-function: ease-in-out;
+  animation-fill-mode: forwards
+}
+
+@keyframes mymove {
+  0%   {width: 0vw;}
+  
+}
+  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Bonsoir JWT</title>
+
+  </head>
+  <body>
+      <center>
+
+<a href="logout">Sign out</a><br><br>
+
+<a href="chat/<%= user.name %>">chat</a>
+
+<h2>
+          Bienvenido:
+         
+          <span><%= user.name %></span><br>
+          <span><%= user.rol %></span>
+          <span hidden><%= user.id %></span>
+         
+        </h2>
+
+
+         <a href="/geol">Solicitar una geolocalización</a><br><br>
+
+        <a href="/create">crear</a>
+
+        
+<div style="overflow-y: auto;height: 40vh;width: 70vw;">
+<table>
+
+<tbody>
+
+<% results.forEach((elementos)=>{ %>
+
+<tr>
+
+<td hidden><%= elementos.id %></td>
+<td><%= elementos.item %></td>
+
+<td style="width: 15vw;"><p class="counter" data-target='<%= elementos.elemento %>' id="bar" style="width: calc((<%= elementos.elemento %>/<%= maxx[0].mas %>)*100%);background: #1a4178;border-radius: 5px;padding: 2%;"></p></td>
+<td style="padding-left: 4%;">
+<a href="/edit/<%= elementos.id %>">editar</a>
+
+</td>
+<td style="padding-left: 10%;">
+
+<a href="/delete/<%= elementos.id %>">borrar</a>
+</td>
+
+
+
+</tr>
+
+<% }) %>
+
+</tbody>
+</table>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<a href="/createp/<%= user.id %>">crear notita</a>
+<table>
+
+<tbody>
+
+<% respriv.forEach((elementos)=>{ %>
+
+<tr>
+
+<td hidden><%= elementos.idpriv %></td>
+<td><%= elementos.elementopriv %></td>
+
+
+<td>
+<a href="/editp/<%= elementos.idpriv %>">editar</a>
+<a href="/deletep/<%= elementos.idpriv %>">borrar</a>
+</td>
+
+</tr>
+
+<% }) %>
+
+</tbody>
+</table>
+    
+
+    </center>
+
+    <script src="script.js"></script>
+  </body>
+</html>
